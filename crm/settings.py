@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'generate_invoice',
     'chat_app',
     'dashboard',
+    'lead_automation', 
 
     # AI Calling + API
     'ai_calling',
@@ -161,11 +162,20 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 # ------------------------------------------------------
 # TWILIO (AI CALLING)
 # ------------------------------------------------------
-# Twilio
 USE_TWILIO = os.environ.get("USE_TWILIO", "False") == "True"
 TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID", "")
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "")
 TWILIO_DEFAULT_CALLER = os.environ.get("TWILIO_DEFAULT_CALLER", "")
+
+# ------------------------------------------------------
+# VAPI (AI CALLING)
+# ------------------------------------------------------
+USE_VAPI = os.environ.get("USE_VAPI", "False") == "True"
+VAPI_API_KEY = os.environ.get("VAPI_API_KEY", "")
+VAPI_ASSISTANT_ID = os.environ.get("VAPI_ASSISTANT_ID", "")
+VAPI_PHONE_NUMBER_ID = os.environ.get("VAPI_PHONE_NUMBER_ID", "")
+VAPI_API_URL = os.environ.get("VAPI_API_URL", "https://api.vapi.ai")
+
 
 # ------------------------------------------------------
 # CRM API (OPTIONAL)

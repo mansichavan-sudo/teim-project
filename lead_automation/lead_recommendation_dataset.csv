@@ -1,0 +1,11 @@
+lead_type,service_type,past_purchases,upsell_item,cross_sell_item
+Hot,Service,Cleaning Package,Premium Plan,Maintenance
+Warm,Product,Pest Spray,Advanced Spray,Cleaning Kit
+Cold,Service,,Basic Plan,Discount Offer
+Hot,Product,Spray + Kit,Combo Pack,Free Sample
+Warm,Service,Cleaning Only,Standard Plan,Maintenance
+Cold,Product,,Starter Pack,Trial Kit
+Hot,Service,Deep Cleaning,Premium Plan,Extra Maintenance
+Warm,Product,Insect Repellent,Advanced Spray,Air Freshener
+Cold,Service,,Basic Plan,Discount Offer
+Hot,Product,Combo Pack,Ultimate Pack,Free Sample

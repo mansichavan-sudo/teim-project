@@ -1,0 +1,45 @@
+{% extends 'lead_automation/base.html' %}
+
+{% block title %}ML Recommendation{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Machine Learning Recommendations</h2>
+
+<div class="card p-4 mb-4">
+    <form method="post">
+        {% csrf_token %}
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="lead_type" class="form-label">Lead Type</label>
+                <select name="lead_type" id="lead_type" class="form-select" required>
+                    {% for lead_class in le_lead_classes %}
+                        <option value="{{ lead_class }}">{{ lead_class }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="service_type" class="form-label">Service / Product Type</label>
+                <select name="service_type" id="service_type" class="form-select" required>
+                    {% for service_class in le_service_classes %}
+                        <option value="{{ service_class }}">{{ service_class }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="past_interactions" class="form-label">Past Interactions</label>
+                <input type="number" name="past_interactions" id="past_interactions" class="form-control" value="0" min="0" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Predict</button>
+    </form>
+</div>
+
+{% if recommendation %}
+<div class="card p-4">
+    <h4>Recommendation Result:</h4>
+    <p><strong>Upsell:</strong> {{ recommendation.upsell }}</p>
+    <p><strong>Cross-sell:</strong> {{ recommendation.cross_sell }}</p>
+</div>
+{% endif %}
+
+{% endblock %}
